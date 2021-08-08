@@ -1,12 +1,10 @@
 package com.coffeesoft.mono.sdk.open.service;
 
-import com.coffeesoft.mono.sdk.open.service.dto.Currency;
-import retrofit2.Call;
-import retrofit2.http.GET;
+import com.coffeesoft.mono.sdk.open.dto.Currency;
+import com.coffeesoft.mono.sdk.open.exception.MonoException;
 
 import java.util.List;
 
 public interface MonoService {
-    @GET("/bank/currency")
-    Call<List<Currency>> currency();
+    List<Currency> currency() throws MonoException;
 }

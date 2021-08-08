@@ -1,19 +1,20 @@
 package com.coffeesoft;
 
-import com.coffeesoft.mono.sdk.open.service.MonoRequester;
-import com.coffeesoft.mono.sdk.open.service.dto.Currency;
+import com.coffeesoft.mono.sdk.open.exception.MonoException;
+import com.coffeesoft.mono.sdk.open.service.MonoService;
+import com.coffeesoft.mono.sdk.open.service.MonoServiceImpl;
+import com.coffeesoft.mono.sdk.open.dto.Currency;
 import org.junit.Test;
 
-import java.io.IOException;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
 public class CurrencyTest {
     @Test
-    public void testCount() throws IOException {
-        MonoRequester requester = new MonoRequester();
-        List<Currency> currencies = requester.currency();
+    public void testCount() throws MonoException {
+        MonoService monoService = new MonoServiceImpl();
+        List<Currency> currencies = monoService.currency();
         assertEquals("Size list currencies", 114, currencies.size());
     }
 }

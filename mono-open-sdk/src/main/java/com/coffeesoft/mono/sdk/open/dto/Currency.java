@@ -1,4 +1,4 @@
-package com.coffeesoft.mono.sdk.open.service.dto;
+package com.coffeesoft.mono.sdk.open.dto;
 
 public class Currency {
     private String currencyCodeA;
